@@ -12,10 +12,10 @@ const ResidentOffice: React.FC = () => {
     "회의실 매월 일정 시간 무료 사용권 부여",
     "프리미엄 원두커피 및 각종 티백 무제한 제공",
     "우편물 및 택배 수령 대행 + 알림 메시지 발송",
-    "주 2회 전문 업체의 오피스 클리닝 서비스",
+    "항상 청결한 오피스 클리닝 서비스",
     "공용 프린터 및 고성능 복합기 무상 지원",
     "사업자 등록 주소지 제공 및 행정 지원 서비스",
-    "스타일리시한 비즈니스 카페 및 라운지 이용권"
+    "스타일리시한 비즈니스 카페 및 라운지 이용"
   ];
 
   return (
@@ -79,7 +79,7 @@ const ResidentOffice: React.FC = () => {
                 <div className="p-10">
                   <h3 className="text-2xl font-heading mb-4 text-brand-primary">{room.t}</h3>
                   <p className="text-brand-text/60 leading-loose h-24 font-body">{room.d}</p>
-                  <Link to="/contact" className="block text-center bg-brand-bg py-4 rounded-full font-heading text-brand-primary hover:bg-brand-primary hover:text-white transition-all">잔여 호실 확인하기</Link>
+                  <Link to="/gallery" className="block text-center bg-brand-bg py-4 rounded-full font-heading text-brand-primary hover:bg-brand-primary hover:text-white transition-all shadow-sm hover:shadow-md hover:-translate-y-1">프리미엄 공간 둘러보기</Link>
                 </div>
               </div>
             ))}

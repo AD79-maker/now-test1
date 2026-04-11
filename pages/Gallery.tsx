@@ -3,14 +3,15 @@ import React from 'react';
 
 const Gallery: React.FC = () => {
   const images = [
-    { src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200', t: '메인 카페 라운지', d: '호텔 라운지와 같은 고급스러운 무드의 휴식 및 소통 공간입니다.' },
-    { src: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=1200', t: '1인 전용실', d: '독보적인 층고와 집중력을 높여주는 프라이빗 공간입니다.' },
-    { src: 'https://images.unsplash.com/photo-1517502884422-41eaead166d4?q=80&w=1200', t: '스마트 미팅룸', d: '65인치 UHD TV와 무선 미러링이 완비된 전문 회의 공간입니다.' },
-    { src: 'https://images.unsplash.com/photo-1542744173-05336fcc7ad4?q=80&w=1200', t: '복도 전경', d: '답답함을 덜어낸 넓은 복도와 세련된 인테리어입니다.' },
-    { src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200', t: '2인 비즈니스룸', d: '소규모 팀의 유연한 업무를 지원하는 쾌적한 룸입니다.' },
-    { src: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1200', t: 'OA 존 및 탕비 공간', d: '고성능 복합기와 다양한 다과가 준비된 편의 공간입니다.' },
-    { src: 'https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=1200', t: '입구 리셉션', d: '방문객을 정중하게 맞이하는 나우의 얼굴입니다.' },
-    { src: 'https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1200', t: '야간 오피스 풍경', d: '24시간 안전하고 쾌적하게 유지되는 나우의 밤입니다.' }
+    { src: '/images/dongtan-virtual-office-entrance-02.jpg', t: '메인 카페 라운지', d: '호텔 라운지와 같은 고급스러운 무드의 휴식 및 소통 공간입니다.' },
+    { src: '/images/dongtan-virtual-office-entrance-04.jpg', t: '치동천 전경', d: '치동천의 아름다운 전경은 나우의 얼굴입니다.' },
+    { src: '/images/dongtan-virtual-office-entrance-03.jpg', t: '야간 오피스 풍경', d: '24시간 안전하고 쾌적하게 유지되는 나우의 밤입니다.' },
+    { src: '/images/dongtan-shared-office-private-room-01.jpg', t: '1인 전용실', d: '독보적인 층고와 집중력을 높여주는 프라이빗 공간입니다.' },
+    { src: '/images/dongtan-shared-office-private-room-03.jpg', t: '1인 전용실', d: '독보적인 층고와 집중력을 높여주는 프라이빗 공간입니다.' },
+    { src: '/images/dongtan-coworking-meeting-room-01.jpg', t: '회의실/미팅룸', d: '65인치 UHD TV와 유리 칠판이 완비된 전문 회의 공간입니다.' },
+    { src: '/images/dongtan-coworking-office-lounge-01.jpg', t: '복도 전경', d: '답답함을 덜어낸 넓은 복도와 세련된 인테리어입니다.' },
+    { src: '/images/dongtan-shared-office-private-room-05.jpg', t: '2인 전용실', d: '소규모 팀의 유연한 업무를 지원하는 쾌적한 룸입니다.' },
+    { src: '/images/dongtan-virtual-office-entrance-05.jpg', t: '휴게 공간 및 카페테리아', d: '원두커피와 10가지 티와 다양한 다과가 준비된 편의 공간입니다.' }
   ];
 
   return (

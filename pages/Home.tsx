@@ -1,12 +1,16 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'motion/react';
 import { SAMPLE_REVIEWS, SAMPLE_FAQS } from '../constants';
 
 const Home: React.FC = () => {
+  // Double the reviews for a seamless marquee effect
+  const marqueeReviews = [...SAMPLE_REVIEWS, ...SAMPLE_REVIEWS];
+
   return (
     <div className="animate-fade-in overflow-hidden">
-      {/* Hero Section */}
+      {/* ... (Hero Section remains the same) */}
       <section className="relative h-[90vh] flex items-center bg-brand-primary">
         <div className="absolute inset-0 z-0">
           <img 
@@ -30,7 +34,7 @@ const Home: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
               <Link to="/contact" className="bg-brand-accent text-white px-12 py-5 rounded-full text-lg font-heading hover:bg-opacity-90 transition-all text-center shadow-xl hover:-translate-y-1">
-                방문 투어 예약하기
+                문의 / 상담하기
               </Link>
               <Link to="/resident" className="bg-white/5 backdrop-blur-md border border-white/20 text-white px-12 py-5 rounded-full text-lg font-heading hover:bg-white/10 transition-all text-center">
                 상주사무실 둘러보기
@@ -45,7 +49,7 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="relative">
-              <img src="https://images.unsplash.com/photo-1539628399213-d6aa89c93074?auto=format&fit=crop&q=80&w=1200" alt="Space Detail" className="rounded-[4rem] shadow-2xl relative z-10" />
+              <img src="/images/dongtan-coworking-brand.jpg" alt="Space Detail" className="rounded-[4rem] shadow-2xl relative z-10" />
               <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-brand-subBg rounded-full -z-10 animate-pulse"></div>
             </div>
             <div>
@@ -63,7 +67,7 @@ const Home: React.FC = () => {
               </div>
               <div className="mt-12 grid grid-cols-2 gap-8">
                 <div className="border-l-4 border-brand-accent pl-6">
-                  <p className="text-3xl font-heading text-brand-primary mb-2">3.5m</p>
+                  <p className="text-3xl font-heading text-brand-primary mb-2">3.0m</p>
                   <p className="text-xs opacity-50 uppercase tracking-widest text-brand-primary">Ceiling Height</p>
                 </div>
                 <div className="border-l-4 border-brand-accent pl-6">
@@ -81,7 +85,7 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-20">
             <h2 className="text-4xl font-heading mb-6">최상의 공간 솔루션</h2>
-            <p className="text-brand-text/60">비즈니스의 규모와 성격에 맞춘 다양한 공간 서비스를 제안합니다.</p>
+            <p className="text-brand-text/60">비즈니스의 규모 and 성격에 맞춘 다양한 공간 서비스를 제안합니다.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
@@ -130,13 +134,28 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Reviews & FAQ */}
-      <section className="py-32 bg-brand-bg">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-heading text-center mb-20">입주사 생생 후기</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-32">
-            {SAMPLE_REVIEWS.slice(0, 4).map(r => (
-              <div key={r.id} className="bg-white p-10 rounded-3xl border border-brand-border/50">
+      {/* Reviews Marquee Section */}
+      <section className="py-32 bg-brand-bg overflow-hidden">
+        <div className="container mx-auto px-4 mb-16">
+          <h2 className="text-4xl font-heading text-center">입주사 생생 후기</h2>
+        </div>
+        
+        <div className="relative flex overflow-hidden">
+          <motion.div 
+            className="flex space-x-8 whitespace-nowrap"
+            animate={{ x: [0, -1920] }} // Adjust based on content width, but -50% is safer if we use a ref or fixed width
+            transition={{ 
+              duration: 40, 
+              repeat: Infinity, 
+              ease: "linear" 
+            }}
+            style={{ width: "fit-content" }}
+          >
+            {marqueeReviews.map((r, idx) => (
+              <div 
+                key={`${r.id}-${idx}`} 
+                className="inline-block w-[350px] bg-white p-10 rounded-3xl border border-brand-border/50 whitespace-normal shadow-sm"
+              >
                 <div className="flex text-brand-accent mb-4">
                   {[...Array(r.rating)].map((_, i) => (
                     <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
@@ -149,8 +168,13 @@ const Home: React.FC = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
+        </div>
+      </section>
 
+      {/* FAQ Section */}
+      <section className="py-32 bg-brand-bg">
+        <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-heading text-center mb-16">자주 묻는 질문</h2>
             <div className="space-y-4">
@@ -176,7 +200,7 @@ const Home: React.FC = () => {
       <section className="py-20 bg-brand-primary text-white text-center">
         <h2 className="text-4xl font-heading mb-10 leading-tight">성공을 위한 첫 단추, <br />나우공유오피스와 함께하세요.</h2>
         <Link to="/contact" className="bg-brand-accent text-white px-16 py-6 rounded-full text-xl font-heading hover:scale-105 transition-all shadow-xl inline-block">
-          무료 투어 예약하기
+          문의 / 상담하기
         </Link>
       </section>
     </div>

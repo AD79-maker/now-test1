@@ -1,104 +1,134 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { CONTACT_INFO } from '../constants';
 
 const Contact: React.FC = () => {
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    window.scrollTo(0, 0);
-  };
-
-  if (submitted) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-brand-bg py-24 px-4">
-        <div className="max-w-md w-full bg-white p-16 rounded-[4rem] shadow-2xl text-center">
-          <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-8">
-            <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          </div>
-          <h2 className="text-3xl font-heading mb-4">접수가 완료되었습니다!</h2>
-          <p className="text-brand-text/60 leading-relaxed mb-10 font-body">
-            상담 매니저가 확인 후 1시간 이내에 <br />
-            연락드리겠습니다. 감사합니다.
-          </p>
-          <button onClick={() => setSubmitted(false)} className="bg-brand-primary text-white w-full py-4 rounded-full font-heading text-lg">홈으로 이동</button>
+  const channels = [
+    {
+      id: 'naver-place',
+      name: '네이버 플레이스 예약',
+      desc: '간편하게 방문 일정을 예약하세요.',
+      btnText: '예약하기',
+      link: 'https://naver.me/5oEzr3us',
+      icon: (
+        <div className="w-14 h-14 bg-[#03C75A] rounded-2xl flex items-center justify-center text-white shadow-lg">
+          <span className="text-3xl font-bold">N</span>
         </div>
-      </div>
-    );
-  }
+      ),
+      hoverColor: 'hover:border-[#03C75A]/40',
+      btnColor: 'bg-[#03C75A]'
+    },
+    {
+      id: 'naver-talk',
+      name: '네이버 톡톡 상담',
+      desc: '실시간으로 궁금한 점을 문의하세요.',
+      btnText: '문의하기',
+      link: `https://${CONTACT_INFO.naverTalk}`,
+      icon: (
+        <div className="w-14 h-14 bg-[#03C75A] rounded-2xl flex items-center justify-center text-white shadow-lg">
+          <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.477 2 2 6.477 2 12c0 1.821.487 3.53 1.338 5L2 22l5-1.338c1.47.851 3.179 1.338 5 1.338 5.523 0 10-4.477 10-10S17.523 2 12 2zm0 16c-1.477 0-2.847-.395-4.022-1.082l-.288-.168-2.346.628.628-2.346-.168-.288C5.12 13.57 4.725 12.2 4.725 10.725 4.725 7.01 7.735 4 11.45 4s6.725 3.01 6.725 6.725S15.165 17.45 11.45 17.45z"/>
+          </svg>
+        </div>
+      ),
+      hoverColor: 'hover:border-[#03C75A]/40',
+      btnColor: 'bg-[#03C75A]'
+    },
+    {
+      id: 'kakao',
+      name: '카카오톡 채널',
+      desc: '카톡으로 편하게 상담받으세요.',
+      btnText: '상담하기',
+      link: `https://pf.kakao.com/_DbdJn`,
+      icon: (
+        <div className="w-14 h-14 bg-[#FEE500] rounded-2xl flex items-center justify-center text-[#3C1E1E] shadow-lg">
+          <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 3c-4.97 0-9 3.185-9 7.115 0 2.558 1.707 4.8 4.315 6.055-.17.625-.612 2.262-.7 2.584-.113.415.14.408.296.305.12-.08 1.955-1.326 2.738-1.86.44.065.894.1 1.35.1 4.97 0 9-3.186 9-7.116C21 6.185 16.97 3 12 3z"/>
+          </svg>
+        </div>
+      ),
+      hoverColor: 'hover:border-[#FEE500]/40',
+      btnColor: 'bg-[#FEE500] !text-[#3C1E1E]'
+    },
+    {
+      id: 'phone',
+      name: '상담 전화/문자',
+      value: CONTACT_INFO.phone,
+      desc: '전화로 빠르게 상담하세요.',
+      btnText: '전화하기',
+      link: `tel:${CONTACT_INFO.phone}`,
+      icon: (
+        <div className="w-14 h-14 bg-brand-primary rounded-2xl flex items-center justify-center text-white shadow-lg">
+          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+          </svg>
+        </div>
+      ),
+      hoverColor: 'hover:border-brand-primary/40',
+      btnColor: 'bg-brand-primary'
+    }
+  ];
 
   return (
-    <div className="animate-fade-in bg-brand-bg min-h-screen py-24">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="flex flex-col lg:flex-row gap-20">
-          <div className="lg:w-2/5">
-            <h1 className="text-5xl font-heading mb-10 leading-tight text-brand-primary">투어 및 입주 상담</h1>
-            <p className="text-xl text-brand-text/60 mb-12 leading-loose font-body">
-              나우공유오피스는 방문 전 예약제로 운영됩니다. <br />
-              직접 공간을 보시고 독보적인 개방감을 확인하세요. <br />
-              비상주 계약 및 단체 회의실 예약도 환영합니다.
-            </p>
+    <div className="relative min-h-screen flex items-center justify-center py-24 overflow-hidden">
+      {/* Background Image with Blur */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000" 
+          alt="Office Background" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-white/50 backdrop-blur-md"></div>
+      </div>
 
-            <div className="space-y-8">
-              <div className="flex items-center space-x-6">
-                <div className="w-16 h-16 bg-brand-subBg rounded-3xl flex items-center justify-center text-brand-primary">
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+      <div className="container mx-auto px-4 relative z-10 max-w-5xl">
+        <div className="text-center mb-16">
+          <h1 className="text-5xl md:text-6xl font-heading mb-8 text-brand-primary tracking-tight">문의 및 상담</h1>
+          <p className="text-xl text-brand-text/70 max-w-2xl mx-auto leading-relaxed font-body">
+            나우공유오피스는 방문 전 예약제로 운영됩니다.<br />
+            직접 공간을 보시고 독보적인 개방감을 확인하세요.<br />
+            비상주 계약 및 단체 회의실 예약도 환영합니다.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {channels.map((channel) => (
+            <a
+              key={channel.id}
+              href={channel.link}
+              target={channel.id === 'phone' ? undefined : '_blank'}
+              rel={channel.id === 'phone' ? undefined : 'noreferrer'}
+              className={`group relative bg-white/80 backdrop-blur-2xl p-10 rounded-[3rem] border border-white/60 shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:bg-white/95 ${channel.hoverColor} flex items-center space-x-8`}
+            >
+              <div className="flex-shrink-0 transition-transform duration-500 group-hover:scale-110">
+                {channel.icon}
+              </div>
+              
+              <div className="flex-grow">
+                <div className="flex justify-between items-start">
+                  <h3 className="text-xl font-heading text-brand-primary/50 uppercase tracking-widest text-sm mb-1">{channel.name}</h3>
+                  <svg className="w-5 h-5 text-brand-text/20 group-hover:text-brand-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
                 </div>
-                <div>
-                  <p className="text-xs text-brand-text/40 font-heading uppercase tracking-widest mb-1">상담 직통</p>
-                  <p className="text-2xl font-heading text-brand-primary">{CONTACT_INFO.phone}</p>
+                
+                {channel.value ? (
+                  <p className="text-3xl font-heading text-brand-primary mb-2 tracking-tight">{channel.value}</p>
+                ) : (
+                  <h4 className="text-2xl font-heading text-brand-primary mb-2 tracking-tight">{channel.name.split(' ')[0]} {channel.name.split(' ')[1]}</h4>
+                )}
+                
+                <p className="text-sm text-brand-text/50 mb-6 font-body leading-relaxed">{channel.desc}</p>
+                
+                <div className={`inline-flex items-center px-8 py-3 rounded-full text-sm font-heading text-white transition-all shadow-lg group-hover:shadow-brand-primary/20 ${channel.btnColor}`}>
+                  {channel.btnText}
+                  <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
                 </div>
               </div>
-              <div className="flex items-center space-x-6">
-                <div className="w-16 h-16 bg-brand-subBg rounded-3xl flex items-center justify-center text-brand-primary">
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </div>
-                <div>
-                  <p className="text-xs text-brand-text/40 font-heading uppercase tracking-widest mb-1">카카오톡 채널</p>
-                  <p className="text-2xl font-heading text-brand-primary">{CONTACT_INFO.kakao}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="lg:w-3/5">
-            <form onSubmit={handleSubmit} className="bg-white p-12 md:p-20 rounded-[4rem] shadow-2xl border border-brand-border/30">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                <div>
-                  <label className="block text-sm font-heading mb-3 uppercase tracking-widest opacity-50">성함 / 기업명 *</label>
-                  <input required type="text" className="w-full bg-brand-bg border border-brand-border rounded-2xl px-6 py-5 focus:ring-2 focus:ring-brand-accent outline-none transition-all font-body" placeholder="성함을 입력하세요." />
-                </div>
-                <div>
-                  <label className="block text-sm font-heading mb-3 uppercase tracking-widest opacity-50">연락처 *</label>
-                  <input required type="tel" className="w-full bg-brand-bg border border-brand-border rounded-2xl px-6 py-5 focus:ring-2 focus:ring-brand-accent outline-none transition-all font-body" placeholder="010-0000-0000" />
-                </div>
-              </div>
-
-              <div className="mb-8">
-                <label className="block text-sm font-heading mb-3 uppercase tracking-widest opacity-50">상담 희망 서비스 *</label>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  {['상주 사무실', '비상주 사무실', '회의실 대관'].map(type => (
-                    <label key={type} className="flex items-center justify-center border border-brand-border rounded-2xl p-5 cursor-pointer hover:bg-brand-subBg transition-all has-[:checked]:bg-brand-primary has-[:checked]:text-white group">
-                      <input type="radio" name="service" value={type} className="hidden" defaultChecked={type === '상주 사무실'} />
-                      <span className="text-sm font-heading">{type}</span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mb-10">
-                <label className="block text-sm font-heading mb-3 uppercase tracking-widest opacity-50">문의 내용</label>
-                <textarea className="w-full bg-brand-bg border border-brand-border rounded-2xl px-6 py-5 h-44 focus:ring-2 focus:ring-brand-accent outline-none transition-all resize-none font-body leading-loose" placeholder="궁금하신 내용을 남겨주세요 (예: 입주 시기, 인원 등)"></textarea>
-              </div>
-
-              <button type="submit" className="w-full bg-brand-primary text-white py-6 rounded-full text-2xl font-heading hover:bg-opacity-90 transition-all shadow-xl">
-                상담 예약 신청하기
-              </button>
-              <p className="text-[10px] text-center text-brand-text/30 mt-6 italic">※ 입력하신 정보는 상담 목적으로만 활용되며 안전하게 보호됩니다.</p>
-            </form>
-          </div>
+            </a>
+          ))}
         </div>
       </div>
     </div>

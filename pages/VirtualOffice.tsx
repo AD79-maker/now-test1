@@ -40,7 +40,7 @@ const VirtualOffice: React.FC = () => {
                 <ul className="space-y-5 opacity-90 font-body">
                   <li className="flex items-center space-x-3">
                     <svg className="w-5 h-5 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
-                    <span>프리미엄 빌딩 정식 주소지 제공</span>
+                    <span>화성시 동탄구 사업장 주소지 제공</span>
                   </li>
                   <li className="flex items-center space-x-3">
                     <svg className="w-5 h-5 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
@@ -48,15 +48,15 @@ const VirtualOffice: React.FC = () => {
                   </li>
                   <li className="flex items-center space-x-3">
                     <svg className="w-5 h-5 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
-                    <span>우편물 도착 시 즉시 카톡 알림 발송</span>
+                    <span>우편물 도착 시 즉시 문자 알림 발송</span>
                   </li>
                   <li className="flex items-center space-x-3">
                     <svg className="w-5 h-5 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
-                    <span>월 2시간 전용 미팅룸 무료 이용</span>
+                    <span>월 3시간 전용 미팅룸 무료 이용</span>
                   </li>
                   <li className="flex items-center space-x-3">
                     <svg className="w-5 h-5 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
-                    <span>전문 세무사/법무사 연계 지원 서비스</span>
+                    <span>비과밀 억제권역 / 2종 근생(모든 업종 가능)</span>
                   </li>
                 </ul>
               </div>
@@ -78,8 +78,8 @@ const VirtualOffice: React.FC = () => {
             </div>
             
             <div className="text-center">
-              <Link to="/contact" className="bg-brand-primary text-white px-20 py-6 rounded-full text-2xl font-heading hover:scale-105 transition-all shadow-xl inline-block">
-                비상주 서비스 신청하기
+              <Link to="/contact" className="bg-brand-primary text-white px-16 py-6 rounded-full text-2xl font-heading hover:scale-105 transition-all shadow-xl inline-block">
+                문의 / 상담하기
               </Link>
             </div>
           </div>
