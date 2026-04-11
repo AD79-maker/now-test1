@@ -16,6 +16,7 @@ const Home: React.FC = () => {
           <img 
             src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000" 
             alt="Main Lobby" 
+            referrerPolicy="no-referrer"
             className="w-full h-full object-cover opacity-40"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-primary via-transparent to-transparent"></div>
@@ -49,7 +50,12 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="relative">
-              <img src="/images/dongtan-coworking-brand.jpg" alt="Space Detail" className="rounded-[4rem] shadow-2xl relative z-10" />
+              <img 
+                src="/images/dongtan-coworking-brand.jpg" 
+                alt="Space Detail" 
+                referrerPolicy="no-referrer"
+                className="rounded-[4rem] shadow-2xl relative z-10" 
+              />
               <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-brand-subBg rounded-full -z-10 animate-pulse"></div>
             </div>
             <div>

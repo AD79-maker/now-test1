@@ -29,7 +29,12 @@ const Gallery: React.FC = () => {
           {images.map((img, i) => (
             <div key={i} className="group relative overflow-hidden rounded-[3rem] bg-white shadow-lg cursor-pointer">
               <div className="h-80 overflow-hidden">
-                <img src={img.src} alt={img.t} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <img 
+                  src={img.src} 
+                  alt={img.t} 
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                />
               </div>
               <div className="absolute inset-0 bg-brand-primary/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-10">
                 <h3 className="text-white text-2xl font-heading mb-2">{img.t}</h3>

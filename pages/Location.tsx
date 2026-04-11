@@ -25,9 +25,10 @@ const Location: React.FC = () => {
             <img 
               src="/images/map-now.png" 
               alt="Now Dongtan Map" 
+              referrerPolicy="no-referrer"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               onError={(e) => {
-                // Fallback if jpg doesn't exist but png does, or just show a placeholder
+                console.error('Map image failed to load');
                 (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=1200';
               }}
             />

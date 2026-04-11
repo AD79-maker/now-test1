@@ -35,7 +35,12 @@ const ResidentOffice: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-20 items-center mb-32">
             <div className="lg:w-1/2">
-              <img src="/images/dongtan-coworking-office-lounge-01.jpg" alt="Office Detail" className="rounded-[4rem] shadow-2xl" />
+              <img 
+                src="/images/dongtan-coworking-office-lounge-01.jpg" 
+                alt="Office Detail" 
+                referrerPolicy="no-referrer"
+                className="rounded-[4rem] shadow-2xl" 
+              />
             </div>
             <div className="lg:w-1/2">
               <h2 className="text-4xl font-heading mb-10 leading-tight">답답함을 덜어낸 <br /><span className="text-brand-accent">압도적 개방감</span></h2>
@@ -74,7 +79,12 @@ const ResidentOffice: React.FC = () => {
             ].map((room, i) => (
               <div key={i} className="bg-white rounded-[3rem] overflow-hidden shadow-sm group border border-brand-border">
                 <div className="h-64 overflow-hidden">
-                  <img src={room.img} alt={room.t} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <img 
+                    src={room.img} 
+                    alt={room.t} 
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                  />
                 </div>
                 <div className="p-10">
                   <h3 className="text-2xl font-heading mb-4 text-brand-primary">{room.t}</h3>
