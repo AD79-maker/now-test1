@@ -14,7 +14,7 @@ export const CONTACT_INFO = {
   address: "경기도 화성시 동탄구 동탄순환대로29길 62, 디스퀘어리버 3층",
   phone: "0507-1436-2889",
   kakao:"http://pf.kakao.com/_DbdJn",
-  naverTalk : "talk.naver.com/W46NA2",
+  naverTalk : "https://talk.naver.com/ct/w4h5z0",
   hours: "평일 09:00 - 18:00 (상담은 24시간 가능)",
   
 };

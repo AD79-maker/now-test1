@@ -149,7 +149,7 @@ const FloatingCTA: React.FC = () => {
         <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-300 text-sm whitespace-nowrap font-heading">전화상담</span>
       </a>
       <a 
-        href="http://talk.naver.com/W46NA2" 
+        href={CONTACT_INFO.naverTalk} 
         target="_blank" 
         rel="noreferrer" 
         className="bg-[#03C75A] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center group"
