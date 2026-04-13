@@ -26,7 +26,7 @@ const ResidentOffice: React.FC = () => {
           <p className="text-xl text-brand-text/60 max-w-3xl mx-auto leading-loose font-body">
             나우의 상주 사무실은 단순히 칸막이로 나뉜 방이 아닙니다. <br />
             가장 높은 집중력과 가장 편안한 업무 경험을 위해 설계된 <br />
-            당신만을 위한 고유한 업무 영토입니다.
+            당신만을 위한 고유한 업무 공간입니다.
           </p>
         </div>
       </section>
