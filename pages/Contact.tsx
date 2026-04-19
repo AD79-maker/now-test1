@@ -23,7 +23,7 @@ const Contact: React.FC = () => {
       name: '네이버 톡톡 상담',
       desc: '실시간으로 궁금한 점을 문의하세요.',
       btnText: '문의하기',
-      link: `https://${CONTACT_INFO.naverTalk}`,
+      link: `http://talk.naver.com/W46NA2`,
       icon: (
         <div className="w-14 h-14 bg-[#03C75A] rounded-2xl flex items-center justify-center text-white shadow-lg">
           <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
