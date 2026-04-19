@@ -23,7 +23,7 @@ const Location: React.FC = () => {
             className="group relative block overflow-hidden rounded-[3rem] shadow-2xl transition-all duration-500 hover:scale-[1.02] h-[500px]"
           >
             <img 
-              src="/images/map-now.png" 
+              src="/images/map-now.avif" 
               alt="Now Dongtan Map" 
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"

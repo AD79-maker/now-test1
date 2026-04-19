@@ -19,7 +19,7 @@ const MeetingRoom: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-20 items-center mb-32">
             <div className="lg:w-1/2">
-              <img src="/images/dongtan-coworking-meeting-room-01.jpg" alt="Meeting Room" className="rounded-[4rem] shadow-2xl" />
+              <img src="/images/dongtan-coworking-meeting-room-01.avif" alt="Meeting Room" className="rounded-[4rem] shadow-2xl" />
             </div>
             <div className="lg:w-1/2">
               <h2 className="text-4xl font-heading mb-10 leading-tight">성공적인 비즈니스를 위한 <br /><span className="text-brand-accent">스마트 미팅 솔루션</span></h2>

@@ -1,7 +1,0 @@
-# Force images to be treated as binary files and disable LFS filters
-*.jpg binary
-*.png binary
-*.gif binary
-*.jpeg binary
-*.webp binary
-*.ico binary

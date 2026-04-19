@@ -36,7 +36,7 @@ const ResidentOffice: React.FC = () => {
           <div className="flex flex-col lg:flex-row gap-20 items-center mb-32">
             <div className="lg:w-1/2">
               <img 
-                src="/images/dongtan-coworking-office-lounge-01.jpg" 
+                src="/images/dongtan-coworking-office-lounge-01.avif" 
                 alt="Office Detail" 
                 referrerPolicy="no-referrer"
                 className="rounded-[4rem] shadow-2xl" 
@@ -73,9 +73,9 @@ const ResidentOffice: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
-              { t: '1인실', d: '독립된 공간에서 업무에만 몰입하고 싶은 프리랜서 및 창업가에게 추천합니다.', img: '/images/dongtan-shared-office-private-room-01.jpg' },
-              { t: '2인실', d: '소규모 팀이나 파트너십 비즈니스에 최적화된 공간 설계입니다.', img: '/images/dongtan-shared-office-private-room-05.jpg' },
-              { t: '3~4인실', d: '성장하는 기업을 위한 여유 있는 공간으로 쾌적한 팀워크를 보장합니다.', img: '/images/dongtan-shared-office-private-room-03.jpg' }
+              { t: '1인실', d: '독립된 공간에서 업무에만 몰입하고 싶은 프리랜서 및 창업가에게 추천합니다.', img: '/images/dongtan-shared-office-private-room-01.avif' },
+              { t: '2인실', d: '소규모 팀이나 파트너십 비즈니스에 최적화된 공간 설계입니다.', img: '/images/dongtan-shared-office-private-room-05.avif' },
+              { t: '3~4인실', d: '성장하는 기업을 위한 여유 있는 공간으로 쾌적한 팀워크를 보장합니다.', img: '/images/dongtan-shared-office-private-room-03.avif' }
             ].map((room, i) => (
               <div key={i} className="bg-white rounded-[3rem] overflow-hidden shadow-sm group border border-brand-border">
                 <div className="h-64 overflow-hidden">

@@ -51,7 +51,7 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="relative">
               <img 
-                src="/images/dongtan-coworking-brand.jpg" 
+                src="/images/dongtan-coworking-brand.avif" 
                 alt="Space Detail" 
                 referrerPolicy="no-referrer"
                 className="rounded-[4rem] shadow-2xl relative z-10" 
